@@ -106,7 +106,12 @@ height: 5vh;
                     }, 2000);
                     console.log('kiya');  
                 }else{
-                    console.log('Mujh ko samjh nhi arha');
+                      setTimeout (function(){
+                        
+                      list.innerHTML += "<li> Mujh ko samjh nhi arha </li>"
+                      bot.style.display = 'none'
+                    }, 1000)
+
                 }
                 message.value = ""
         }
@@ -115,4 +120,5 @@ height: 5vh;
         
     </script>
 </body>
+
 </html>
