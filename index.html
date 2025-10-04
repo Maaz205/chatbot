@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        body{
+            background-color: rgb(23, 4, 92);
+        }
+.style{
+    margin: 5% auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid blueviolet;
+    background-color: rgb(195, 188, 231);
+    height: auto;
+    min-height: 200px;
+    width: 300px;
+    padding-bottom: 4%;
+    border-radius: 15px;
+}
+.style > h1{
+    background-color: rgb(252, 252, 252);
+}
+.style > ul{
+    list-style: none;
+    
+    
+    
+    
+}
+.style > ul > li {
+    border-radius: 15px;
+    margin-top:4%;
+height: 5vh;
+    min-width: 50px;
+    max-width: fit-content;
+    padding: 0% 8%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+}
+.style >#message{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 30%;
+    width: 70%;
+    height: 5vh;
+    padding: 0% 2%;
+    
+    background-color: whitesmoke;
+}
+     </style>
+</head>
+<body>
+    <div class="style">
+    <h1>ChatBot</h1>
+    <ul id="list"></ul>
+    <div id="bot" style="display: none;">typing...</div>
+    <input type="text" onkeydown = "sendMessage()"  id="message">
+</div>
+    <script>
+        
+        function sendMessage (){
+            let list = document.getElementById('list');
+        let bot = document.getElementById('bot');
+        let message = document.getElementById('message');
+            if(event.key === "Enter"){
+            console.log("Enter");
+            bot.style.display = "block"
+                if(['hi' , 'hello' ,'bolo' , 'hey'].indexOf(message.value.toLowerCase()) !== -1){
+                    list.innerHTML += `<li>${message.value}</li>`
+                    setTimeout (function(){
+                        list.innerHTML += "<li> Hello </li>"
+            
+                        
+                    }, 2000);
+                    setTimeout (function(){
+                        bot.style.display = 'none'                
+                    }, 1500)
+
+
+                    setTimeout (function(){
+                        bot.style.display = 'block'                
+                    }, 3000)
+                    
+                    setTimeout (function(){
+                        
+                        list.innerHTML +="<li>kaise hain ap </li> "
+                      bot.style.display = 'none'
+                    }, 4000)
+
+
+
+
+                    console.log('kiya kaam hai');}
+                else if(['theek' , 'fine' ,'good'].indexOf(message.value.toLowerCase()) !== -1){
+                    list.innerHTML += `<li>${message.value} </li>`
+                    setTimeout (function(){
+                        list.innerHTML += "<li> Great </li> "
+                        bot.style.display = 'none'
+                        
+                    }, 2000);
+                    console.log('kiya');  
+                }else{
+                    console.log('Mujh ko samjh nhi arha');
+                }
+                message.value = ""
+        }
+        
+        }
+        
+    </script>
+</body>
+</html>
